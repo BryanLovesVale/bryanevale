@@ -14,6 +14,11 @@
             overflow: hidden;
             position: relative;
             font-family: Arial, sans-serif;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         @keyframes floating-hearts {
@@ -36,6 +41,7 @@
             border: none;
             outline: none;
             user-select: none;
+            touch-action: none;
         }
 
         #message {
@@ -63,6 +69,7 @@
             heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
             heart.style.fontSize = (Math.random() * 2 + 1) + "em";
             heart.addEventListener("click", popHeart);
+            heart.addEventListener("touchstart", popHeart, { passive: false });
             document.body.appendChild(heart);
         }
 
